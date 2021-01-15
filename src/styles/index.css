@@ -1,0 +1,16 @@
+@import "../../node_modules/normalize.css/";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color:hsl(209, 61%, 16%);
+  background: hsl(212, 33%, 89%);
+}
+
+p {
+  margin: 0;
+}
