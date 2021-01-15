@@ -17,13 +17,13 @@ export const theme = {
     darker: "hsl(209, 34%, 30%)",
     darkest: "hsl(209, 61%, 16%)",
   },
-  alert: {
+  danger: {
     light: "hsl(360, 82%, 89%)",
     main: "hsl(360, 64%, 55%)",
     dark: "hsl(360, 79%, 32%)",
   },
-  warning: {
-    light: "hsl(42, 63%, 48%)",
+  alert: {
+    light: "hsl(45, 90%, 88%)",
     main: "hsl(43, 89%, 70%)",
     dark: "hsl(42, 63%, 48%)",
   },

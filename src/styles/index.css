@@ -14,3 +14,14 @@ body {
 p {
   margin: 0;
 }
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}

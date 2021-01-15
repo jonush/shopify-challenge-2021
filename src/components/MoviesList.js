@@ -9,17 +9,21 @@ import axios from "axios";
 const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 4rem;
+
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 `
 
 const LoadButton = styled.button`
   width: 236px;
   margin: 1rem 0 2rem;
   padding: 0.5rem 2rem;
-  border-radius: 10px;
-  border: none;
-  color: ${theme.primary.lightest};
+  color: ${theme.primary.main};
+  background: ${theme.primary.lightest};
   font-weight: 600;
-  background: ${theme.primary.main};
+  outline: none;
 
   &:hover {
     cursor: pointer;

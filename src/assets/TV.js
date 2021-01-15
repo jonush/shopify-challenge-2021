@@ -2,22 +2,23 @@ import styled from "styled-components";
 import { BodyText } from "../styles/TextStyles";
 import { theme } from "../styles/ColorStyles";
 
-const PlaceholderText = styled(BodyText)`
-  position: fixed;
-  margin: 0 auto;
+const Wrapper = styled.div`
   width: 100%;
-  top: 375px;
-  color: ${theme.neutral.light};
+  margin: 0 auto;
+  z-index: 0;
 `
 
 const PlaceholderSVG = styled.svg`
   width: 250px;
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+  }
 `
 
 function TV() {
   return (
-    <>
-      <PlaceholderText>Search for a movie to get started</PlaceholderText>
+    <Wrapper>
       <PlaceholderSVG width="560" height="560" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M121.912 159.096V176.4H87.248" stroke="#BCCCDC" strokeWidth="2.25246" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M156.576 176.4H121.912V159.096" stroke="#BCCCDC" strokeWidth="2.25246" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -135,7 +136,7 @@ function TV() {
         <path d="M140.28 122.36H136.976" stroke="#243A51" strokeWidth="2.25246" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M166.6 126.448C168.858 126.448 170.688 124.618 170.688 122.36C170.688 120.102 168.858 118.272 166.6 118.272C164.342 118.272 162.512 120.102 162.512 122.36C162.512 124.618 164.342 126.448 166.6 126.448Z" fill="#243A51"/>
       </PlaceholderSVG>
-    </>
+    </Wrapper>
   )
 }
 

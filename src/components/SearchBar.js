@@ -6,7 +6,11 @@ import ShoppiesLogo from "../assets/Logo.png";
 import axios from "axios";
 import { SearchContext } from "../contexts/SearchContext";
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    padding-top: 2rem;
+  }
+`
 
 const Logo = styled.img`
   width: 100px;
@@ -20,31 +24,42 @@ const SearchContainer = styled.form`
   align-items: center;
   width: 250px;
   margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 500px;
+  }
 `
 
 const SearchInput = styled.input`
   width: 234px;
   margin-bottom: 1rem;
-  padding: 8px;
+  padding: 0.5rem;
   border: none;
   border-radius: 10px;
   color: ${theme.neutral.darkest};
   background: ${theme.neutral.lighter};
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    margin: 0;
+    border-radius: 10px 0 0 10px;
+  }
 `
 
 const SearchButton = styled.button`
   width: 250px;
-  padding: 8px;
-  border: none;
-  border-radius: 10px;
   color: ${theme.primary.lightest};
   background: ${theme.primary.main};
   font-weight: bold;
 
   &:hover {
-    cursor: pointer;
     background: ${theme.primary.dark};
+  }
+
+  @media screen and (min-width: 768px) {
+    border-radius: 0 10px 10px 0;
   }
 `
 

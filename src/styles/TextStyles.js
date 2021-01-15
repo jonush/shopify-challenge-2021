@@ -28,10 +28,10 @@ export const H3 = styled.h3`
 `
 
 export const BodyTitle = styled.p`
-  font-size: 24px;
+  font-size: 20px;
 
-  @media screen and (max-width: 375px) {
-    font-size: 20px;
+  @media screen and (max-width: 315px) {
+    font-size: 18px;
   }
 `
 
@@ -39,7 +39,7 @@ export const BodyText = styled.p`
   font-size: 18px;
   line-height: 1.5;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 315px) {
     font-size: 16px;
   }
 `
