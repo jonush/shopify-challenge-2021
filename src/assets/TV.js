@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { BodyText } from "../styles/TextStyles";
-import { theme } from "../styles/ColorStyles";
 
 const Wrapper = styled.div`
   width: 100%;

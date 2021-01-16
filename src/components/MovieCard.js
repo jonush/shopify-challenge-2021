@@ -89,7 +89,7 @@ function MovieCard({ movie }) {
 
   useEffect(() => {
     checkIfNominated(movie);
-  }, [nominations]);
+  }, [nominations, movie]);
 
   const viewDetails = () => {
     setVisible(true);

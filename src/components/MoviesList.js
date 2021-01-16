@@ -42,7 +42,7 @@ function MoviesList({page, setPage}) {
     if(page >= maxPages) {
       setVisible(false);
     }
-  }, [movies])
+  }, [movies, page, results])
 
   const fetchMovies = () => {
     return axios
