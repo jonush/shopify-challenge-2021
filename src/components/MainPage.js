@@ -9,6 +9,7 @@ import { SearchContext } from "../contexts/SearchContext";
 import { NominationsContext } from "../contexts/NominationsContext";
 import styled from "styled-components";
 import { theme } from "../styles/ColorStyles";
+import  useWindowSize from "../hooks/useWindowSize";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -54,6 +55,7 @@ function MainPage() {
   const [page, setPage] = useState(1);
   const [visible, setVisible] = useState(false);
   const [banner, setBanner] = useState(false);
+  const size = useWindowSize();
 
   // retrieve saved nominations, if there are any
   useEffect(() => {
@@ -64,10 +66,10 @@ function MainPage() {
 
   // automatically show nominations list if not on mobile view
   useEffect(() => {
-    if(window.innerWidth >= 768) {
+    if(size.width >= 768) {
       setVisible(true);
     }
-  }, [window.innerWidth])
+  }, [size])
 
   // display a banner if user has nominated 5 movies
   useEffect(() => {
@@ -103,7 +105,7 @@ function MainPage() {
             <SearchBar setPage={setPage} />
 
             <MoviesContainer>
-              { !visible ? <NominationsButton onClick={seeNominations}>My Nominations</NominationsButton> : <NominationsList visible={visible} setVisible={setVisible} />}
+              { !visible ? <NominationsButton onClick={seeNominations}>My Nominations</NominationsButton> : <NominationsList visible={visible} setVisible={setVisible} size={size} />}
               { movies && movies.length > 0 ? <MoviesList page={page} setPage={setPage} /> : <TV /> }
             </MoviesContainer>
           </NominationsContext.Provider>

@@ -6,13 +6,17 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   z-index: 0;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 const PlaceholderSVG = styled.svg`
   width: 250px;
 
   @media screen and (min-width: 768px) {
-    width: 450px;
+    width: 425px;
   }
 `
 

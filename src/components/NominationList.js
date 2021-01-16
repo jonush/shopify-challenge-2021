@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect }from "react";
+import { useContext }from "react";
 import styled from "styled-components";
 import { theme } from "../styles/ColorStyles";
 import { BodyTitle, BodyText }from "../styles/TextStyles";
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   border-radius: 10px 10px 0 0;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 375px;
     padding-top: 0;
     position: relative;
     background: #FFFFFF;
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1080px) {
-    width: 35%;
+    width: 400px;
     margin: 0 auto;
   }
 `
@@ -67,21 +67,12 @@ const PlaceholderText = styled(BodyText)`
   margin: 1rem 0;
 `
 
-function NominationsList({setVisible}) {
+function NominationsList({setVisible, size}) {
   const {nominations, removeMovie} = useContext(NominationsContext);
-  const [closeButton, hideCloseButton] = useState(false);
-
-  useEffect(() => {
-    if(window.innerWidth >= 768) {
-      hideCloseButton(true);
-    } else {
-      hideCloseButton(false);
-    }
-  }, [nominations])
 
   return (
     <Wrapper>
-      {!closeButton ? <CloseButton setVisible={setVisible} /> : null}
+      {size.width < 768 ? <CloseButton setVisible={setVisible} /> : null}
       <Title>My Nominations</Title>
 
       {

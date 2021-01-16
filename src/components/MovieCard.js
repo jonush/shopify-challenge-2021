@@ -5,6 +5,8 @@ import { BodyText } from "../styles/TextStyles";
 import MissingPoster from "../assets/MissingPoster";
 import { MoviesContext } from "../contexts/MoviesContext";
 import { NominationsContext } from "../contexts/NominationsContext";
+import MovieDetails from "./MovieDetails";
+import axios from "axios";
 
 const Card = styled.div`
   display: flex;
@@ -17,6 +19,10 @@ const Card = styled.div`
   border-radius: 10px;
   background: #FFFFFF;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const Info = styled.div`
@@ -45,6 +51,11 @@ const Details = styled.div`
 const Title = styled(BodyText)`
   text-align: left;
   overflow-wrap: break-word;
+
+  &:hover {
+    cursor: pointer;
+    color: ${theme.primary.main};
+  }
 `
 
 const NominatedButton =  styled.button`
@@ -73,10 +84,17 @@ function MovieCard({ movie }) {
   const {addMovie} = useContext(MoviesContext);
   const {nominations} = useContext(NominationsContext);
   const [nominated, setNominated] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [details, setDetails] = useState();
 
   useEffect(() => {
     checkIfNominated(movie);
-  }, [nominations])
+  }, [nominations]);
+
+  const viewDetails = () => {
+    setVisible(true);
+    fetchMovieDetails(movie);
+  };
 
   const checkIfNominated = movie => {
     if(nominations.filter(n => n.imdbID === movie.imdbID).length > 0) {
@@ -86,20 +104,35 @@ function MovieCard({ movie }) {
     }
   };
 
+  const fetchMovieDetails = movie => {
+    return axios
+      .get(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${movie.imdbID}&plot=full`)
+      .then(res => {
+          setDetails(res.data);
+          console.log(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+  };
+
   return (
-    <Card>
-      <Info>
-        { movie.Poster !== "N/A" ? <Poster src={movie.Poster} alt="movie poster" /> : <MissingPoster />}
-        
+    <>
+      {
+        visible && details ? <MovieDetails details={details} setVisible={setVisible} /> :
+        <Card>
+          <Info>
+            { movie.Poster !== "N/A" ? <Poster src={movie.Poster} alt="movie poster" /> : <MissingPoster />}
 
-        <Details>
-          <Title>{movie.Title} ({movie.Year})</Title>
-        </Details>
-      </Info>
+            <Details>
+              <Title onClick={viewDetails} >{movie.Title} ({movie.Year})</Title>
+            </Details>
+          </Info>
 
-      {nominated ? <NominatedButton disabled>Nominated</NominatedButton> : <AddNominationButton onClick={() => addMovie(movie)}>Nominate</AddNominationButton>}
-      
-    </Card>
+          {nominated ? <NominatedButton disabled>Nominated</NominatedButton> : <AddNominationButton onClick={() => addMovie(movie)}>Nominate</AddNominationButton>}
+        </Card>
+      }
+    </>
   )
 };
 
