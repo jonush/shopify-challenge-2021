@@ -39,8 +39,6 @@ There are two pages included in the Figma file, documenting my process iterating
 
 4. After establishing a design system and a general sense of component layout/data flow, I began with a CRA template and built out the app. For me, this phase of my process included styling and eventually testing as well.
 
----
-
 ## Future Possibilities
 
 In the future, with more user participation I felt that there was potential to build out a back-end saving user preferences and thus showing popular nominations and other insights through some forms of data visualization on the front-end. I think those elements would have helped craft the application as more of an involved experience for the user. 
