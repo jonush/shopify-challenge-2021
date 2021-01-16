@@ -91,7 +91,7 @@ const Plot = styled(BodyText)`
   margin-top: 1rem;
   color: ${theme.neutral.darker};
   height: 300px;
-  overflow: scroll;
+  overflow: auto;
   font-size: 16px;
   padding-bottom: 1rem;
 

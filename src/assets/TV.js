@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   z-index: 0;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 40%;
   }
 `
 
