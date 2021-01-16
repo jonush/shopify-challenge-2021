@@ -109,7 +109,6 @@ function MovieCard({ movie }) {
       .get(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${movie.imdbID}&plot=full`)
       .then(res => {
           setDetails(res.data);
-          console.log(res.data);
         })
         .catch(err => {
           console.log(err);

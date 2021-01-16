@@ -35,7 +35,7 @@ const NominationsButton = styled.button`
 
 const MoviesContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   padding: 2rem 0;
   width: 90%;

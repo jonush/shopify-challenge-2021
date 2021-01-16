@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Shopify Challenge 2021
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my submission for the Shopify 2021 Front-End Internship.
 
-## Available Scripts
+[Figma File](https://www.figma.com/file/RyRdmKuQYuhcy4nFXmWX2m/Shopify-Project?node-id=225%3A0)
 
-In the project directory, you can run:
+[Application - deployed with Vercel](https://shopify-challenge-2021-xi.vercel.app/)
 
-### `yarn start`
+---
+## Details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- The project was designed in Figma and built using React and styled-components.
+- No third-party component libraries were used to create the user interface.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- The application:
+  - Includes routing
+  - Uses axios for making requests to the API
+  - Allows for loading additional results past the 10 supplied in the initial request
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Design
 
-### `yarn build`
+There are two pages included in the Figma file, documenting my process iterating over designs from v1 to v2, which was used in the final product. Version 2 was more intricate with a shallow design system used to unify the overall feel of the movie nomination experience.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. My overall process started off in the spec sheet provided in the Google Docs and involved planning with regards to:
 
-### `yarn eject`
+- user stories (what actions did the user have to perform?)
+- what elements needed to be displayed?
+- what types of data were going to flow through the app?
+- what tech stack would efficiently satisfy these requirements?
+  
+2. After I had a general idea of a tech specs, I looked into the OMDB API to get a sense of what requests and responses I would be working with, as that also shaped the format that I wanted to display data through the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Then, I moved into the designing phase, first with initial low-res wireframes and concepts. I played around with different colors while trying to keep some resemblance to the Shopify brand, as the application *was for The Shoppies*. In this phase, I focused on:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- UI components
+- responsive layout
+- colors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. After establishing a design system and a general sense of component layout/data flow, I began with a CRA template and built out the app. For me, this phase of my process included styling and eventually testing as well.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Future Possibilities
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the future, with more user participation I felt that there was potential to build out a back-end saving user preferences and thus showing popular nominations and other insights through some forms of data visualization on the front-end. I think those elements would have helped craft the application as more of an involved experience for the user. 

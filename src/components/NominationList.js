@@ -6,24 +6,23 @@ import { NominationsContext } from "../contexts/NominationsContext";
 import CloseButton from "../assets/CloseButton";
 
 const Wrapper = styled.div`
-  position: fixed;
   z-index: 1;
-  padding: 2rem 0 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  width: 275px;
   background: ${theme.neutral.lightest};
-  box-shadow: 0px -4px 8px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px 10px 0 0;
-
-  @media screen and (min-width: 768px) {
-    width: 375px;
-    padding-top: 0;
-    position: relative;
-    background: #FFFFFF;
-    border: 1px solid ${theme.neutral.light};
-    border-radius: 10px;
-    box-shadow: none;
+  border: 1px solid ${theme.neutral.light};
+  border-radius: 10px;
+  box-shadow: none;
+  background: #FFFFFF;
+  
+  @media screen and (max-width: 425px) {
+    width: 100%;
+    padding: 2rem 0 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: ${theme.neutral.lightest};
+    box-shadow: 0px -4px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 0 0;
   }
 
   @media screen and (min-width: 1080px) {

@@ -8,11 +8,11 @@ import axios from "axios";
 
 const Wrapper = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding-bottom: 4rem;
 
   @media screen and (min-width: 768px) {
-    width: 40%;
+    width: 45%;
   }
 `
 

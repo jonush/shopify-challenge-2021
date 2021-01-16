@@ -77,7 +77,6 @@ function SearchBar({setPage}) {
     return axios
       .get(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${search}&type=movie`)
       .then(res => {
-        console.log(res.data);
         setResults(res.data.totalResults);
         setMovies(res.data.Search);
         setPage(1);
