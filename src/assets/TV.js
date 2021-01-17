@@ -4,7 +4,6 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   z-index: 0;
-  border: 1px solid red;
 
   @media screen and (min-width: 768px) {
     width: 40%;
